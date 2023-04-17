@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.6'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com.cg'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.projectlombok:lombok:1.18.22'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'mysql:mysql-connector-java'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+    implementation group: 'org.modelmapper', name: 'modelmapper', version: '3.1.0'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:3.0.0'
+
+
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.14.1'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.14.1'
+    implementation 'io.springfox:springfox-swagger2:3.0.0'
+    implementation 'io.springfox:springfox-swagger-ui:3.0.0'
+    implementation 'io.jsonwebtoken:jjwt:0.9.1'
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5:3.1.1.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
